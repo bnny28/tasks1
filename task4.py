@@ -18,7 +18,7 @@ def bananas(s: str) -> set:
             for i in combs_pos:
                 lst_word[i] = '-'
             variant = ''.join(lst_word)
-            # Проверяем получилось ли слово "bananas"
+            # Проверяем получилось ли слово "banana"
             # Если да, добавляем в результирующий набор
             if variant.replace('-', '') == 'banana':
                 result.add(variant)

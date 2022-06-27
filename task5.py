@@ -1,4 +1,4 @@
-def count_find_num(primesL: list, limits: int) -> list:
+def count_find_num(primesL: list, limit: int) -> list:
     """
     :param primesL: list of prime factors
     :param limits: limit of the mathematical product
@@ -9,7 +9,7 @@ def count_find_num(primesL: list, limits: int) -> list:
     for multiplier in primesL:
         product *= multiplier
     # Если произведение больше лимита вернем пустой результат
-    if product > limits:
+    if product > limit:
         return []
     # Создадим список результатов произведений
     products = [product]
@@ -19,7 +19,7 @@ def count_find_num(primesL: list, limits: int) -> list:
     for item in products:
         for multiplier in primesL:
             new_product = item * multiplier
-            while new_product <= limits:
+            while new_product <= limit:
                 if new_product not in products:
                     products.append(new_product)
                 new_product *= multiplier
