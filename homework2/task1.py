@@ -43,7 +43,7 @@ def get_short_path_points(points: tuple) -> str:
         for num in num_points:
             cur_path += f'-> {points[num]}[{(cur_length := cur_length + distance_matrix[pred_point][num])}] '
             pred_point = num
-        # Формируем строку пути в начальную точку и выводим весь путь
+        # Формируем строку пути в начальную точку, затем выводим весь путь
         cur_path += f'-> {points[0]}[{(cur_length := cur_length + distance_matrix[num_points[-1]][0])}] '
         cur_path += f'= {cur_length}'
         # Проверяем путь на минимальность
