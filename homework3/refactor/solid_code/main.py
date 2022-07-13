@@ -1,6 +1,6 @@
 from typing import Union
 
-from heroes import Superman, ChuckNorris, ABCSuperHero
+from heroes import Superman, ChuckNorris
 from mass_medias import NewsPapers
 from places import Kostroma, Tokyo, SomePlanet
 
