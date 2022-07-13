@@ -10,7 +10,7 @@ def save_the_place(hero: Union[Superman, ChuckNorris],
                    mass_media: NewsPapers):
     hero.find(place)
     hero.attack()
-    if isinstance(hero, ABCSuperHero):
+    if hero.is_superhero():
         hero.ultimate()
     mass_media.create_news(place, hero)
 

@@ -20,6 +20,9 @@ class ABCHero(ABC):
     def find(place):
         return place.get_antagonist()
 
+    def is_superhero(self):
+        return isinstance(self, ABCSuperHero)
+
 
 class ABCSuperHero(ABCHero):
     """
