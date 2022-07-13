@@ -5,6 +5,7 @@ class ABCWeapons(ABC):
     """
     Абстрактный класс миксина оружия.
     """
+
     @abstractmethod
     def use_weapon(self):
         pass
@@ -23,3 +24,8 @@ class Lasers(ABCWeapons):
 class MartialArts(ABCWeapons):
     def use_weapon(self):
         print('Bump')
+
+
+class Kick(ABCWeapons):
+    def use_weapon(self):
+        print('Kick')

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from weapons import Lasers, Gun
+from weapons import Lasers, Gun, Kick
 
 
 class ABCHero(ABC):
@@ -33,11 +33,11 @@ class ABCSuperHero(ABCHero):
         pass
 
 
-class Superman(ABCSuperHero, Lasers):
+class Superman(ABCSuperHero, Lasers, Kick):
     name = 'Clark Kent'
 
     def attack(self):
-        print('Kick')
+        Kick.use_weapon(self)
 
     def ultimate(self):
         self.use_weapon()
