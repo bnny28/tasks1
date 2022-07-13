@@ -1,13 +1,11 @@
-from typing import Union
-
-from heroes import Superman, ChuckNorris
-from mass_medias import NewsPapers, Radio
-from places import Kostroma, Tokyo, SomePlanet
+from heroes import Superman, ChuckNorris, ABCHero
+from mass_medias import NewsPapers, Radio, ABCMedia
+from places import Kostroma, Tokyo, SomePlanet, ABCPlace
 
 
-def save_the_place(hero: Union[Superman, ChuckNorris],
-                   place: Union[Kostroma, Tokyo, SomePlanet],
-                   mass_media: Union[NewsPapers, Radio]):
+def save_the_place(hero: ABCHero,
+                   place: ABCPlace,
+                   mass_media: ABCMedia):
     hero.find(place)
     hero.attack()
     if hero.is_superhero():

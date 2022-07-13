@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Union
 
 from heroes import ABCHero
-from places import ABCPlanet, ABCCity
+from places import ABCPlanet, ABCCity, ABCPlace
 
 
 class ABCMedia(ABC):
@@ -10,7 +10,7 @@ class ABCMedia(ABC):
     Абстрактный класс средства массовой информации.
     """
     @abstractmethod
-    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
+    def create_news(self, place: ABCPlace, hero: ABCHero):
         """
         Выпуск новостей.
 
@@ -18,7 +18,8 @@ class ABCMedia(ABC):
         :param hero: герой
         :return: Null
         """
-        point = place.name if isinstance(place, ABCCity) else 'planet ' + str(place.coordinates)
+        point = place.name if isinstance(place, ABCCity) else 'planet ' + str(place.coordinates) \
+            if isinstance(place, ABCPlanet) else 'unknown'
         return f'{hero.name} saved the {point}!'
 
 
@@ -26,7 +27,7 @@ class NewsPapers(ABCMedia):
     """
     Класс газет.
     """
-    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
+    def create_news(self, place: ABCPlace, hero: ABCHero):
         print(f'NewsPapers: {super().create_news(place, hero)}')
 
 
