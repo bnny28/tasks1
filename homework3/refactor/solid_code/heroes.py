@@ -7,6 +7,10 @@ class ABCHero(ABC):
     """
     Абстрактный класс героя с обычной атакой.
     """
+
+    def __init__(self, is_superhero=False):
+        self.is_superhero = is_superhero
+
     @property
     @abstractmethod
     def name(self):
@@ -20,14 +24,15 @@ class ABCHero(ABC):
     def find(place):
         return place.get_antagonist()
 
-    def is_superhero(self):
-        return isinstance(self, ABCSuperHero)
-
 
 class ABCSuperHero(ABCHero):
     """
     Абстрактный класс супергероя, который обладает максимальной атакой.
     """
+
+    def __init__(self):
+        super().__init__(is_superhero=True)
+
     @abstractmethod
     def ultimate(self):
         pass

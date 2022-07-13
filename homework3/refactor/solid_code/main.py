@@ -8,7 +8,7 @@ def save_the_place(hero: ABCHero,
                    mass_media: ABCMedia):
     hero.find(place)
     hero.attack()
-    if hero.is_superhero():
+    if hero.is_superhero:
         hero.ultimate()
     mass_media.create_news(place, hero)
 

@@ -7,18 +7,23 @@ class ABCPlace(ABC):
     """
     Абстрактный класс места нападения.
     """
+
+    def __init__(self, is_planet):
+        self.is_planet = is_planet
+
     @abstractmethod
     def get_antagonist(self):
         pass
-
-    def is_planet(self):
-        return isinstance(self, ABCPlanet)
 
 
 class ABCPlanet(ABCPlace):
     """
     Абстрактный класс планеты с координатами.
     """
+
+    def __init__(self):
+        super().__init__(is_planet=True)
+
     @property
     @abstractmethod
     def coordinates(self) -> [float]:
@@ -29,6 +34,10 @@ class ABCCity(ABCPlace):
     """
     Абстрактный класс города с именем.
     """
+
+    def __init__(self):
+        super().__init__(is_planet=False)
+
     @property
     @abstractmethod
     def name(self) -> str:
