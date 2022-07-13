@@ -5,7 +5,7 @@ def delay_decorator_runner(call_count, start_sleep_time, factor, boarder_sleep_t
     """
     Вычисляет функцию заданное количество раз с задержкой, определяемой по правилам:
 
-    t = start_sleep_time * factor if t < border_sleep_time
+    t = start_sleep_time * factor ^ n if t < border_sleep_time
     t = border_sleep_time if t >= border_sleep_time.
 
     :param call_count: количество запусков функции
