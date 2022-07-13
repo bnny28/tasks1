@@ -11,6 +11,9 @@ class ABCPlace(ABC):
     def get_antagonist(self):
         pass
 
+    def is_planet(self):
+        return isinstance(self, ABCPlanet)
+
 
 class ABCPlanet(ABCPlace):
     """
