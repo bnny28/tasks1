@@ -16,6 +16,10 @@ class ABCHero(ABC):
     def attack(self):
         pass
 
+    @staticmethod
+    def find(place):
+        return place.get_antagonist()
+
 
 class ABCSuperHero(ABCHero):
     """

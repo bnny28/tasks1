@@ -8,7 +8,7 @@ from places import Kostroma, Tokyo, SomePlanet
 def save_the_place(hero: Union[Superman, ChuckNorris],
                    place: Union[Kostroma, Tokyo, SomePlanet],
                    mass_media: NewsPapers):
-    place.location_antagonist()
+    hero.find(place)
     hero.attack()
     if isinstance(hero, ABCSuperHero):
         hero.ultimate()
