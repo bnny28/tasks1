@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import Union
 
 from heroes import ABCHero
 from places import ABCPlanet, ABCCity, ABCPlace
@@ -35,5 +34,5 @@ class Radio(ABCMedia):
     """
     Класс газет.
     """
-    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
+    def create_news(self, place: ABCPlace, hero: ABCHero):
         print(f'Radio: {super().create_news(place, hero)}')
