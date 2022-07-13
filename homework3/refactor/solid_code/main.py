@@ -1,13 +1,13 @@
 from typing import Union
 
 from heroes import Superman, ChuckNorris
-from mass_medias import NewsPapers
+from mass_medias import NewsPapers, Radio
 from places import Kostroma, Tokyo, SomePlanet
 
 
 def save_the_place(hero: Union[Superman, ChuckNorris],
                    place: Union[Kostroma, Tokyo, SomePlanet],
-                   mass_media: NewsPapers):
+                   mass_media: Union[NewsPapers, Radio]):
     hero.find(place)
     hero.attack()
     if hero.is_superhero():
@@ -20,4 +20,4 @@ if __name__ == '__main__':
     print('-' * 20)
     save_the_place(ChuckNorris(), Tokyo(), NewsPapers())
     print('-' * 20)
-    save_the_place(ChuckNorris(), SomePlanet(), NewsPapers())
+    save_the_place(ChuckNorris(), SomePlanet(), Radio())

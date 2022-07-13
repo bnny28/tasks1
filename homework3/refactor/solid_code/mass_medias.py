@@ -11,14 +11,6 @@ class ABCMedia(ABC):
     """
     @abstractmethod
     def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
-        pass
-
-
-class NewsPapers(ABCMedia):
-    """
-    Класс газет.
-    """
-    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
         """
         Выпуск новостей.
 
@@ -27,4 +19,20 @@ class NewsPapers(ABCMedia):
         :return: Null
         """
         point = place.name if isinstance(place, ABCCity) else 'planet ' + str(place.coordinates)
-        print(f'{hero.name} saved the {point}!')
+        return f'{hero.name} saved the {point}!'
+
+
+class NewsPapers(ABCMedia):
+    """
+    Класс газет.
+    """
+    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
+        print(f'NewsPapers: {super().create_news(place, hero)}')
+
+
+class Radio(ABCMedia):
+    """
+    Класс газет.
+    """
+    def create_news(self, place: Union[ABCPlanet, ABCCity], hero: ABCHero):
+        print(f'Radio: {super().create_news(place, hero)}')
