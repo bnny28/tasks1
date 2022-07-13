@@ -18,7 +18,7 @@ class ABCMedia(ABC):
         :param hero: герой
         :return: Null
         """
-        point = 'planet ' + str(place.coordinates) if place.is_planet() else place.name
+        point = 'planet ' + str(place.coordinates) if place.is_planet else place.name
 
         return f'{hero.name} saved the {point}!'
 
