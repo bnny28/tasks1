@@ -32,7 +32,7 @@ class NewsPapers(ABCMedia):
 
 class Radio(ABCMedia):
     """
-    Класс газет.
+    Класс радио.
     """
     def create_news(self, place: ABCPlace, hero: ABCHero):
         print(f'Radio: {super().create_news(place, hero)}')
